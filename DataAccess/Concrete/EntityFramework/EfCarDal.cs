@@ -31,7 +31,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public Car Get(Expression<Func<Car, bool>> filter)
+        public Car Get(Expression<Func<Car, bool>> filter )
         {
             using (GalleryContext context = new GalleryContext())
             {
