@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,12 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBrandDal : EfEntityRepositoryBase<Brand,GalleryContext>,IBrandDal
+    public class EfBrandDal : EfEntityRepositoryBase<Brand, GalleryContext>, IBrandDal
     {
-        
+        public List<BrandDetailDto> GetBrandDetails()
+        {
+            // Burada barnd tablosu ile diğer tabloların join kodları olacak
+            throw new NotImplementedException();
+        }
     }
 }

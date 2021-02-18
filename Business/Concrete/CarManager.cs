@@ -17,15 +17,30 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        public void Add(Car car)
+        {
+            _carDal.Add(car);
+        }
+
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }
 
-        public List<Car> GetCarByDailyPrice(decimal min, decimal max)
+        public Car GetByCarId(int carId)
         {
-            return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+            return _carDal.Get(p => p.CarId == carId);
         }
+
+        //public List<Car> GetCarByDailyPrice(decimal min, decimal max)
+        //{
+        //    return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+        //}
 
         public List<CarDetailDto> GetCarDetails()
         {
@@ -40,6 +55,16 @@ namespace Business.Concrete
         public List<Car> GetCarsByColorId(int id)
         {
             return _carDal.GetAll(p => p.ColorId == id);
+        }
+
+        public List<Car> GetCarsByDailyPrice(decimal min, decimal max)
+        {
+            return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+        }
+
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
         }
     }
 }
