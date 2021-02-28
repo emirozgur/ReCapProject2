@@ -10,7 +10,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarTest();
+            CarTest();
             //Burada colortest ve brandTest metodlarında bu var getall kullanılmasıına rağmen tek değer getiriyor araştırılacak.
             //ColorTest();
             //BrandTest();
@@ -92,7 +92,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetCarDetails())
+            foreach (var car in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine(car.ModelYear + "/" + car.BrandName + "/" + car.ColorName);
             }
@@ -102,7 +102,7 @@ namespace ConsoleUI
             private static void BrandTest()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brand.BrandName);
 
@@ -113,7 +113,7 @@ namespace ConsoleUI
         private static void ColorTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.ColorName);
 
@@ -125,7 +125,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetAll().Data)
             {
                 Console.WriteLine(car.Description);
             }
