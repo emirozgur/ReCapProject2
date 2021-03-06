@@ -58,9 +58,9 @@ namespace WebAPI.Controllers
             var result = _brandService.Delete(brand);
             if (result.Success)
             {
-                return Ok(brand);
+                return Ok(result);
             }
-            return BadRequest(brand);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]

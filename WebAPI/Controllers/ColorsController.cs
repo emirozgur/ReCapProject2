@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest(color);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
